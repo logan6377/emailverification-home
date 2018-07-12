@@ -27,7 +27,7 @@ module.exports = ".link{\r\n      text-decoration: none;\r\n      color: #3991e3
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"container-fluid\">  \n            \n      <div class=\"ctagroup\">\n\n                  <a href=\"\" class=\"link btn\">\n                              Home\n                  </a> | \n      <a href=\"verify\" class=\"link btn\">\n                  Verify\n            </a> \n\n            \n      </div>\n      <router-outlet></router-outlet> \n</div>\n  \n<!-- <br>\n<br>\n<br>\n<app-everify-list *ngIf=\"showElist\"></app-everify-list> -->"
+module.exports = "\n\n<div class=\"container-fluid\">   \n      <router-outlet></router-outlet> \n</div>\n  \n<!-- <br>\n<br>\n<br>\n<app-everify-list *ngIf=\"showElist\"></app-everify-list> -->"
 
 /***/ }),
 
@@ -115,8 +115,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__verified_list_verified_list_component__["a" /* VerifiedListComponent */] },
-    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_14__emailtest_emailtest_component__["a" /* EmailtestComponent */] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__verified_list_verified_list_component__["a" /* VerifiedListComponent */] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
