@@ -27,7 +27,7 @@ module.exports = ".link{\r\n      text-decoration: none;\r\n      color: #3991e3
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"container-fluid\">   \n      <router-outlet></router-outlet> \n</div>\n  \n<!-- <br>\n<br>\n<br>\n<app-everify-list *ngIf=\"showElist\"></app-everify-list> -->"
+module.exports = "<div class=\"ctagroup\">\r\n      <a href=\"\" class=\"link\">Home</a>\r\n      <a href=\"verify\" class=\"link\">Verify</a>\r\n</div>\r\n\r\n<div class=\"container-fluid\">   \r\n      <router-outlet></router-outlet> \r\n</div>\r\n  \r\n<!-- <br>\r\n<br>\r\n<br>\r\n<app-everify-list *ngIf=\"showElist\"></app-everify-list> \r\nnpm install rxjs@6 rxjs-compat@6 --save\r\n-->"
 
 /***/ }),
 
@@ -115,8 +115,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__verified_list_verified_list_component__["a" /* VerifiedListComponent */] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_14__emailtest_emailtest_component__["a" /* EmailtestComponent */] },
+    { path: 'verify', component: __WEBPACK_IMPORTED_MODULE_13__verified_list_verified_list_component__["a" /* VerifiedListComponent */] }
 ];
+/* const appRoutes: Routes = [
+      { path: '', component: VerifiedListComponent }
+]; */
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -156,7 +160,7 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailcheckService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__("./node_modules/rxjs/_esm5/BehaviorSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__("./node_modules/rxjs-compat/_esm5/BehaviorSubject.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -181,7 +185,7 @@ var EmailcheckService = /** @class */ (function () {
         this.inputValueChange = this.inputValue.asObservable();
     }
     EmailcheckService.prototype.verifyEmail = function (email) {
-        console.log(this.api + email);
+        console.log(email);
         return this.http.get(this.api + email, { headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/json') });
     };
     EmailcheckService.prototype.changeMessage = function (showhide) {
@@ -211,7 +215,7 @@ module.exports = ""
 /***/ "./src/app/emailtest/emailtest.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n   \n<app-everify></app-everify> \n\n\n<br>\n<br>\n<br>\n<app-everify-list *ngIf=\"showElist\"></app-everify-list>"
+module.exports = "\r\n\r\n   \r\n<app-everify></app-everify> \r\n\r\n\r\n<br>\r\n<br>\r\n<br>\r\n<!-- <app-everify-list *ngIf=\"showElist\"></app-everify-list> -->"
 
 /***/ }),
 
@@ -274,7 +278,7 @@ module.exports = ""
 /***/ "./src/app/everify-list/everify-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n      <!-- <h2>Content from Firebase</h2>\n      <div class=\"col-md-3\">\n            <pre *ngFor=\"let item of items | async\">{{item.email}}</pre>\n      </div>  -->\n\n      <table class=\"table table-bordered\">\n            <thead>\n                  <tr>\n                        <th width=\"2%\">No.</th>\n                        <th>Email Id</th>\n                        <th>status value</th> \n                        <th>smtp_code</th> \n                        <th>smtp_log</th> \n                        <th>Status</th> \n                  </tr>\n            </thead>\n            <tbody>\n                  <tr *ngFor=\"let value of items | async; let i = index\">\n                        <td>{{i}}</td>\n                        <td>{{value.email.email}}</td>\n                        <td>{{value.email.status}}</td>                        \n                        <td>{{value.email.smtp_code}}</td>\n                        <td>{{value.email.smtp_log}}</td>\n                        <td [ngClass]=\"{'active':value.email.status==1}\">{{value.email.status_description}}</td>\n                  </tr> \n            </tbody>\n      </table> \n</div>\n"
+module.exports = "<div class=\"container-fluid\">\r\n      <!-- <h2>Content from Firebase</h2>\r\n      <div class=\"col-md-3\">\r\n            <pre *ngFor=\"let item of items | async\">{{item.email}}</pre>\r\n      </div>  -->\r\n\r\n      <table class=\"table table-bordered\">\r\n            <thead>\r\n                  <tr>\r\n                        <th width=\"2%\">No.</th>\r\n                        <th>Email Id</th>\r\n                        <th>status value</th> \r\n                        <th>smtp_code</th> \r\n                        <th>smtp_log</th> \r\n                        <th>Status</th> \r\n                  </tr>\r\n            </thead>\r\n            <tbody>\r\n                  <tr *ngFor=\"let value of items | async; let i = index\">\r\n                        <td>{{i}}</td>\r\n                        <td>{{value.email.email}}</td>\r\n                        <td>{{value.email.status}}</td>                        \r\n                        <td>{{value.email.smtp_code}}</td>\r\n                        <td>{{value.email.smtp_log}}</td>\r\n                        <td [ngClass]=\"{'active':value.email.status==1}\">{{value.email.status_description}}</td>\r\n                  </tr> \r\n            </tbody>\r\n      </table> \r\n</div>\r\n"
 
 /***/ }),
 
@@ -335,7 +339,7 @@ module.exports = ""
 /***/ "./src/app/everify/everify.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\t<div class=\"jumbotron jumbotron-fluid\">\n            <div class=\"container\">\n                  <h1 class=\"display-4\">Email Verification</h1>\n                  <p class=\"lead\">Add .CSV URL and Verifiy </p>\n            </div>\n      </div>\n\n      <div class=\"row text-center\">\n            <div class=\"col-3\">\n                  <div class=\"input-group mb-3\">  \n                        <input type=\"text\" class=\"form-control\" placeholder=\"Email List Name\" \n                        (input)=\"checkText($event.target.value)\" \n                        (keypress)=\"omit_special_char($event)\"\n                        (keydown.space)=\"$event.preventDefault()\" \n                        [(ngModel)]=\"textValue\"\n                        >  \n                  </div>\n            </div>\n            <div class=\"col-3\">  \n                  <div class=\"input-group mb-3\">\n                        <div class=\"input-group-prepend\">\n                              <span class=\"input-group-text\">Upload</span>\n                        </div>\n                        <div class=\"custom-file\">\n                              <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile01\" (change)=\"handleFileInput($event.target.files)\">\n                              <label class=\"custom-file-label\" for=\"inputGroupFile01\">Choose file</label>\n                        </div>\n                  </div>\n                   \n            </div> \n\n            <div class=\"col-1\">\n                  <button class=\"btn btn1 btn2\" (click)=\"checkData()\" [disabled]=\"fetchCta\">\n                        Fetch Data\n                  </button>\n            </div>\n            <div class=\"col-1\">\n                  <button class=\"btn btn1 btn2 btn-success\" (click)=\"jsonToExcel()\" [disabled]=\"loadData\">\n                        Export Result\n                  </button>\n            </div>\n      </div> \n\n      \n \n\t<!-- <div style=\"width: 300px;\">\n\t\t<form (ngSubmit)=\"onSubmit()\">\n\t\t\t<div class=\"form-group\">\n\t\t\t\t<label for=\"item\">Item</label> <input type=\"text\"\n\t\t\t\t\tclass=\"form-control\" placeholder=\"Enter content...\" id=\"item\"\n\t\t\t\t\trequired [(ngModel)]=\"itemValue\" name=\"item\">\n\t\t\t</div>\n \n\t\t\t<div class=\"btn-group\">\n\t\t\t\t<button type=\"submit\" class=\"btn btn-success\">Submit</button>\n\t\t\t</div>\n\t\t</form>\n\t</div> -->\n \n\t\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\r\n\t<div class=\"jumbotron jumbotron-fluid\">\r\n            <div class=\"container\">\r\n                  <h1 class=\"display-4\">Email Verification</h1>\r\n                  <p class=\"lead\">Add .CSV URL and Verifiy </p>\r\n            </div>\r\n      </div>\r\n\r\n     \r\n\r\n      <div class=\"row text-center\">\r\n            <div class=\"col-3\">\r\n                  <div class=\"input-group mb-3\">  \r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"Email List Name\" \r\n                        (input)=\"checkText($event.target.value)\" \r\n                        (keypress)=\"omit_special_char($event)\"\r\n                        (keydown.space)=\"$event.preventDefault()\" \r\n                        [(ngModel)]=\"textValue\"\r\n                        >  \r\n                  </div>\r\n            </div>\r\n            <div class=\"col-3\">  \r\n                  <div class=\"input-group mb-3\">\r\n                        <div class=\"input-group-prepend\">\r\n                              <span class=\"input-group-text\">Upload</span>\r\n                        </div>\r\n                        <div class=\"custom-file\">\r\n                              <input type=\"file\" class=\"custom-file-input\" id=\"inputGroupFile01\" (change)=\"handleFileInput($event.target.files)\">\r\n                              <label class=\"custom-file-label\" for=\"inputGroupFile01\">Choose file</label>\r\n                        </div>\r\n                  </div>\r\n                   \r\n            </div> \r\n\r\n            <div class=\"col-1\">\r\n                  <button class=\"btn btn1 btn2\" (click)=\"checkData()\" [disabled]=\"fetchCta\">\r\n                        Fetch Data\r\n                  </button>\r\n            </div>\r\n            <div class=\"col-1\">\r\n                  <button class=\"btn btn1 btn2 btn-success\" (click)=\"jsonToExcel()\" [disabled]=\"loadData\">\r\n                        Export Result\r\n                  </button>\r\n            </div>\r\n\r\n            <div class=\"col-1\">\r\n                  <button class=\"btn btn1 btn2 btn-success\" (click)=\"pause()\" *ngIf=\"!playpause\">\r\n                       Pause\r\n                  </button>\r\n                  <button class=\"btn btn1 btn2 btn-success\" (click)=\"pause()\" *ngIf=\"playpause\">\r\n                        Play\r\n                   </button>\r\n            </div>\r\n\r\n            <!-- <a href=\"javascript:;\" (click)=\"test()\">unsubscribe</a> -->\r\n      </div> \r\n\r\n\r\n      <div class=\"row\">\r\n            <div class=\"col\">\r\n                  Total Email Verified: {{this.counter}}/{{this.overalllengh}} \r\n            </div>\r\n      </div>\r\n      \r\n \r\n\t<!-- <div style=\"width: 300px;\">\r\n\t\t<form (ngSubmit)=\"onSubmit()\">\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<label for=\"item\">Item</label> <input type=\"text\"\r\n\t\t\t\t\tclass=\"form-control\" placeholder=\"Enter content...\" id=\"item\"\r\n\t\t\t\t\trequired [(ngModel)]=\"itemValue\" name=\"item\">\r\n\t\t\t</div>\r\n \r\n\t\t\t<div class=\"btn-group\">\r\n\t\t\t\t<button type=\"submit\" class=\"btn btn-success\">Submit</button>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div> -->\r\n \r\n\t\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -346,12 +350,12 @@ module.exports = "<div class=\"container-fluid\">\n\t<div class=\"jumbotron jumb
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EverifyComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs-compat/_esm5/Observable.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_csv_Angular2_csv__ = __webpack_require__("./node_modules/angular2-csv/Angular2-csv.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_csv_Angular2_csv___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_csv_Angular2_csv__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__emailcheck_service__ = __webpack_require__("./src/app/emailcheck.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_takeWhile__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/takeWhile.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_timer__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/timer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_takeWhile__ = __webpack_require__("./node_modules/rxjs-compat/_esm5/add/operator/takeWhile.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_observable_timer__ = __webpack_require__("./node_modules/rxjs-compat/_esm5/add/observable/timer.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -381,12 +385,26 @@ var EverifyComponent = /** @class */ (function () {
         this.fetchCta = true;
         this.alive = true;
         this.loadData = true;
+        this.playpause = false;
+        this.counter = 0;
+        this.oneTime = true;
+        this.timer = 1;
+        this.startTime = Date.now();
+        this.elapsedTime = Date.now() - this.startTime;
     }
     EverifyComponent.prototype.onSubmit = function () {
         this.db.list('/items').push({ content: this.itemValue });
         this.itemValue = '';
     };
     EverifyComponent.prototype.ngOnInit = function () {
+        //this.observer1();
+        //this.timefunction()
+    };
+    EverifyComponent.prototype.timefunction = function () {
+        var _this = this;
+        setInterval(function () {
+            _this.timer += 1;
+        }, 1);
     };
     EverifyComponent.prototype.handleFileInput = function (files) {
         var _this = this;
@@ -401,8 +419,7 @@ var EverifyComponent = /** @class */ (function () {
             };
         }
     };
-    EverifyComponent.prototype.checkData = function (res) {
-        var _this = this;
+    EverifyComponent.prototype.checkData = function () {
         this.eservice.changeMessage(true);
         this.eservice.changeValue(this.textValue);
         var allTextLines = this.uploadedData.split(/\r\n|\n/);
@@ -418,26 +435,53 @@ var EverifyComponent = /** @class */ (function () {
                 'dd': this.textValue,
                 'total': this.csvData.length
             } });
-        var a = 0;
-        __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].timer(0, 1000)
-            .takeWhile(function () { return _this.alive; })
+        this.observer1();
+    };
+    EverifyComponent.prototype.observer1 = function () {
+        var _this = this;
+        console.log(11);
+        var numbers = __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].timer(0, 1200);
+        var sub = numbers.takeWhile(function () { return _this.alive; })
             .subscribe(function () {
-            _this.eservice.verifyEmail(_this.csvData[a]).subscribe(function (data) {
-                console.log(status);
-                _this.db.list('/' + _this.textValue).push({ email: data });
-                _this.csvDataAll.push(data);
-            });
-            a++;
-            if (a == _this.csvData.length) {
+            /* console.log('fire---'+this.counter)
+            this.counter += 1;
+            if(this.counter==5 || this.counter==10 || this.counter==15 || this.counter==20){
+                  this.alive = false;
+                  this.pause();
+                  sub.unsubscribe();
+            }  */
+            //this.alive = false;
+            _this.eservice.verifyEmail(_this.csvData[_this.counter]).subscribe(function (res) {
+                _this.db.list('/' + _this.textValue).push({ email: res });
+                _this.csvDataAll.push(res);
+                _this.oneTime = true;
+                //this.alive = true;
+            }, function (err) {
+                console.log('log', err.status);
+                _this.db.list('/errorList').push(_this.csvData[_this.counter - 1]);
+                sub.unsubscribe();
+                _this.pause();
+            }),
+                function () {
+                    //sub.unsubscribe()
+                };
+            _this.counter += 1;
+            _this.overalllengh = _this.csvData.length;
+            if (_this.counter == _this.csvData.length) {
                 _this.alive = false;
                 _this.loadData = false;
             }
+        }, function () {
         });
+    };
+    EverifyComponent.prototype.verify = function (value) {
+        console.log('aaa', value.email);
+        // if(value.email)
     };
     EverifyComponent.prototype.jsonToExcel = function () {
         //this.wholeDate = this.eservice.getClients()
         //console.log(this.wholeDate)
-        new __WEBPACK_IMPORTED_MODULE_3_angular2_csv_Angular2_csv__["Angular2Csv"](this.csvDataAll, 'Verified_List', { headers: Object.keys(this.csvData[0]) });
+        new __WEBPACK_IMPORTED_MODULE_3_angular2_csv_Angular2_csv__["Angular2Csv"](this.csvDataAll, this.textValue + '_verified', { headers: Object.keys(this.csvData[0]) });
     };
     EverifyComponent.prototype.handleError = function (error) {
         var errMsg = (error.message) ? error.message :
@@ -457,6 +501,24 @@ var EverifyComponent = /** @class */ (function () {
         else {
             this.fetchCta = true;
         }
+    };
+    EverifyComponent.prototype.pause = function () {
+        if (this.oneTime) {
+            this.playpause = !this.playpause;
+            this.alive = !this.alive;
+            this.tmedelay();
+            this.oneTime = false;
+        }
+    };
+    EverifyComponent.prototype.tmedelay = function () {
+        var _this = this;
+        setTimeout(function () {
+            console.log('timedaly');
+            _this.playpause = !_this.playpause;
+            _this.alive = true;
+            _this.observer1();
+        }, 60000);
+        //
     };
     EverifyComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -483,7 +545,7 @@ module.exports = ".logtext{\r\n      font-size: 10px\r\n}\r\ntd.active{\r\n     
 /***/ "./src/app/verified-list/verified-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\t<div class=\"jumbotron jumbotron-fluid\">\n            <div class=\"container\">\n                  <h1 class=\"display-4\">Verify All Emails</h1>\n                  <p class=\"lead\">Check previously verified Emails</p>\n            </div>\n      </div>\n\n      <div class=\"row mb-5\">\n            <div class=\"col-3\">\n                  <div class=\"form-group mb-2\"> \n\n                        <select (change)=\"filterForeCasts($event.target.value)\" class=\"form-control\">\n                              <option value=\"0\">--Verified List--</option>\n                              <option *ngFor=\"let summary of summaries; let i = index\" value={{i}}>\n                                    {{summary}}\n                              </option>\n                        </select>\n                  </div> \n            </div>\n            <div class=\"col-2\" *ngIf=\"showCount\">\n                  Total Email List : {{countShow}}\n            </div>\n            <div class=\"col-2\">\n                  <button class=\"btn btn1 btn2 btn-success\" (click)=\"jsonToExcel()\" [disabled]=\"loadData\">\n                        Export Result\n                  </button>\n            </div>\n      </div>\n\n      <table class=\"table table-bordered\" *ngIf=\"showTable\">\n            <thead>\n                  <tr>\n                        <th width=\"2%\">No.</th>\n                        <th>Email Id</th>\n                        <th>status value</th> \n                        <th>smtp_code</th> \n                        <th width=\"30%\">smtp_log</th> \n                        <th>Status</th> \n                  </tr>\n            </thead>\n            <tbody>\n                  <tr *ngFor=\"let value of items; let i = index\">\n                        <td>{{i}}</td>\n                        <td>{{value.email.email}}</td>\n                        <td>{{value.email.status}}</td>                        \n                        <td>{{value.email.smtp_code}}</td>\n                        <td class=\"logtext\">{{value.email.smtp_log}}</td>\n                        <td [ngClass]=\"{'active':value.email.status!=1}\">{{value.email.status_description}}</td> <!--  -->\n                  </tr> \n            </tbody>\n      </table> \n\n</div> \n\n"
+module.exports = "<div class=\"container-fluid\">\r\n\t<div class=\"jumbotron jumbotron-fluid\">\r\n            <div class=\"container\">\r\n                  <h1 class=\"display-4\">Verify All Emails</h1>\r\n                  <p class=\"lead\">Check previously verified Emails</p>\r\n            </div>\r\n      </div>\r\n\r\n      <div class=\"row mb-5\">\r\n            <div class=\"col-3\">\r\n                  <div class=\"form-group mb-2\"> \r\n\r\n                        <select (change)=\"filterForeCasts($event.target.value)\" class=\"form-control\">\r\n                              <option value=\"0\">--Verified List--</option>\r\n                              <option *ngFor=\"let summary of summaries; let i = index\" value={{i}}>\r\n                                    {{summary}}\r\n                              </option>\r\n                        </select>\r\n                  </div> \r\n            </div>\r\n            <div class=\"col-2\" *ngIf=\"showCount\">\r\n                  Total Email List : {{countShow}}\r\n            </div>\r\n            <div class=\"col-2\">\r\n                  <button class=\"btn btn1 btn2 btn-success\" (click)=\"jsonToExcel()\" [disabled]=\"loadData\">\r\n                        Export Result\r\n                  </button>\r\n            </div>\r\n      </div>\r\n\r\n      <table class=\"table table-bordered\" *ngIf=\"showTable\">\r\n            <thead>\r\n                  <tr>\r\n                        <th width=\"2%\">No.</th>\r\n                        <th>Email Id</th>\r\n                        <th>status value</th> \r\n                        <th>smtp_code</th> \r\n                        <th width=\"30%\">smtp_log</th> \r\n                        <th>Status</th> \r\n                  </tr>\r\n            </thead>\r\n            <tbody>\r\n                  <tr *ngFor=\"let value of items; let i = index\">\r\n                        <td>{{i}}</td>\r\n                        <td>{{value.email.email}}</td>\r\n                        <td>{{value.email.status}}</td>                        \r\n                        <td>{{value.email.smtp_code}}</td>\r\n                        <td class=\"logtext\">{{value.email.smtp_log}}</td>\r\n                        <td [ngClass]=\"{'active':value.email.status!=1}\">{{value.email.status_description}}</td> <!--  -->\r\n                  </tr> \r\n            </tbody>\r\n      </table> \r\n\r\n</div> \r\n\r\n"
 
 /***/ }),
 
@@ -556,7 +618,7 @@ var VerifiedListComponent = /** @class */ (function () {
         var options = {
             headers: ['Email Id', 'status value', 'smtp_code', 'smtp_log', 'status_description']
         };
-        new __WEBPACK_IMPORTED_MODULE_3_angular2_csv_Angular2_csv__["Angular2Csv"](this.finalList, 'Verified_List', options);
+        new __WEBPACK_IMPORTED_MODULE_3_angular2_csv_Angular2_csv__["Angular2Csv"](this.finalList, this.selection + '_verified', options);
     };
     VerifiedListComponent.prototype.ngOnInit = function () {
     };
